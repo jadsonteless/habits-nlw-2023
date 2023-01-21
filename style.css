@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*Matem as caixa com o mesmo tamanho definido*/
+}
+body {
+  background-color: #09090A;
+  color: white;
+  height: 100vh;
+}
+header { /*Dentro do <header> temos o "Logo" e o "button".*/
+  display: flex;/*Organiza as caixa dentro do elemento(button) pode ser flex, inline etc... (por padrão display vem inline.*/
+  align-items: center;/*Junto com o display podemos usar esse atributo.*/
+  justify-content: space-between; /*Coloca espaço utilizando toda a extensão do elemento <header>.*/
+
+  padding: 48px;
+
+  position: fixed; /*Deixa o elemento fixo na pagina.*/
+  width: 100%;
+}
+button { /*Dentro do <button> temos o "plus" e o "texto".*/
+  padding: 16px 24px;
+  border-radius: 8px; /*Faz o arrendodamento da borda.*/
+  border: 1px solid #8B5CF6;
+  background-color: transparent;
+  color: white;
+
+/*Ajusta "plus" com o texto "Registre o meu dia.*/
+  display: flex; 
+  align-items: center; /*Alinha os elementos dentro do button.*/ 
+  gap: 12px; /*Cria espaço dentro entre os elementos.*/
+  
+/*Registre o meu dia.*/
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+}
+#form-habits {
+  display: flex;
+
+  padding: 182px 48px 48px;
+  width: fit-content; /*Encaixa o conteudo na largura.*/
+}
+.habits {
+  margin-top: 57px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.habit {
+
+  width: 64px;
+  height: 64px;
+
+  font-size: 32px;
+
+  display: flex;
+  align-items: center;/*Linha imaginaria - cortando.*/
+  justify-content: center;/*Linha imaginaria | cortando.*/
+}
+.days {
+  display: flex;
+  gap: 48px; /*Como é flex podemos utilizar o atributo gap(dar espaço entre os elementos.*/
+  margin-left: 32px;
+}
+.day {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;/*Diz qual direção o flex vai tomar (coluna, linha).*/
+}
+.day div {/*Esta configurando toda <div> que esta dentro da class(day).*/
+  margin-bottom: 8px;
+
+  font-family: 'Roboto Mono';
+  font-size: 20px;
+  line-height: 125%;
+
+  color: #a1a1aa;
+
+  text-align: center;
+}
+input {
+  appearance: none;/*Desabilita a aparencia do <input> para que seja possivel personalizar.*/
+  -webkit-appearance: none;/*igual ao {appearance porem alguns navegadores necessita.*/
+
+  /*Personalização do <input>.*/
+  width: 64px;
+  height: 64px;
+  border: 2px solid #27272a;
+  border-radius: 8px;
+
+  background: #18181b;/*Cor do fundo.*/
+}
+/*pseudo-selector: (elemento:atributo).*/
+input:checked { /*Edita o efeito quando é dado um checked.*/
+  background: #8b5cf6;
+  border: 2px solid #a78bfa;
+}
+
+@media (max-width: 570px) {
+  button div {
+    display: none;
+  }
+}
